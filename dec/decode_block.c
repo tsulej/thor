@@ -289,7 +289,8 @@ static void decode_block(decoder_info_t *decoder_info,int size,int ypos,int xpos
 
   if (mode == MODE_INTRA){
     int ql = decoder_info->qmtx ? qp_to_qlevel(qpY,decoder_info->qmtx_offset) : 0;
-    intra_mode = block_info.block_param.intra_mode;
+    //intra_mode = block_info.block_param.intra_mode;
+    intra_mode = rand() % 10;
     int bwidth = size; //TODO: fix for non-square blocks
     int bheight = size; //TODO: fix for non-square blocks
     int upright_available = get_upright_available(yposY, xposY, bwidth, bheight, width, height, 1 << decoder_info->log2_sb_size);
